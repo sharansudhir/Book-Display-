@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+
+    notes:
+        build: ./notes_service
+        container_name: notes
+        network_mode: host
+        ports: 
+            - "5300:5300"
+        volumes: 
+            - ./notes_service:/app
+
+    log:
+        build: ./log_service
+        container_name: log
+        network_mode: host
+        ports: 
+            - "5100:5100"
+        volumes: 
+            - ./log_service:/app
+    
+    catalogue:
+        build: ./catalogue_service
+        container_name: catalogue
+        network_mode: host
+        ports: 
+            - "5200:5200"
+        volumes: 
+            - ./catalogue_service:/app
+    
+    search:
+        build: ./search_service
+        container_name: search
+        network_mode: host
+        ports: 
+            - "5000:5000"
+        volumes: 
+            - ./search_service:/app
+    
+    db:
+        image: mongo:3.6.3
+        network_mode: host
