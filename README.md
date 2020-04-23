@@ -1,2 +1,2 @@
 # Book-Display
-The Project is a web  app which displays the name of author and book stored in MongoDB in AWS EC2 Instance.
+The Project is a web  app which displays the name of author and book stored in MongoDB in AWS EC2 Instance using a Web Interface created using HTML.
